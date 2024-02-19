@@ -1,65 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | AltSchool Assignment 1 | First semester</title>
 
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr; /* Two equal columns */
-      /* gap: 20px; */
-      max-width: 800px; /* Adjust the max-width as needed */
-      margin: 0 auto; /* Center the container */
-    }
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; 
+            color: #333; 
+        }
 
-    .text-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background-color: #ffc0cb; /* Pale pink background */
-    }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
-    .text-content {
-      text-align: center;
-      font-size: 20px;
-      color: #fff;
-    }
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
 
-    .image-side {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        header h1 span {
+            color: #f39c12;
+        }
 
-    .side-image {
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
-  <title>Two-Sided Page</title>
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff; 
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        }
+
+        section h2 {
+            color: #3498db;
+        }
+
+        section p {
+            color: #555; 
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        footer p span {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            height: 700px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn{
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .social-links{
+          text-decoration: none;
+          /* color: inherit; */
+        }
+
+        .btn:hover {
+            background-color: #4f7b98;
+        }
+
+        .social-links:hover{
+          color: #f39c12;
+        }
+
+        @media screen and (max-width: 700px) {
+            section {
+                grid-template-columns: 1fr; /* Collapse into one column */
+            }
+
+            img {
+                order: -1; /* Move the image to the top */
+            }
+            .sth{
+              visibility: hidden;  
+            }
+        }
+    </style>
+
 </head>
 <body>
-  <div class="container">
-    <div class="text-side">
-      <div class="text-content">
-        <h2>About me</h2>
-        <p>My name is Akabogu</p>
-        </div>
-    </div>
 
-    <div class="image-side">
-      <img src="altschool-ID-Card (1).png" alt="Placeholder Image" class="ID card" >
-    </div>
-  </div>
+    <header>
+        <h1>About <span>Akabogu Chimdalu</span></h1>
+    </header>
+
+    <section id="background">
+        <img src="altschool-ID-Card (1).png" alt="Profile Image">
+        <p>Hello! I'm Akabogu Chimdalu, a passionate learner and aspiring individual excited about embarking on this journey with Altschool Africa. <br><br>
+
+          I chose AltSchool Africa because of its commitment to providing a personalized and adaptive learning experience. The emphasis on hands-on projects, real-world applications, and a supportive community resonates with my vision of education. AltSchool's focus on individualized learning paths aligns with my belief that education should be tailored to meet the unique needs and interests of each learner. <br><br>
+          
+          Some of what I plan to achieve are <br>
+          - Skill enhancement <br>
+          - Community engagement <br>
+          - Career development <br>
+          - Personal growth. <br>
+
+
+          <br><br><br>
+          <a href="index.html" class="btn">Back to sign in Page</a>
+        </p>
+
+        
+    </section>
+ 
+    <footer>
+        <p>Thank you for stopping by! I'm looking forward to sharing more of my journey with you and learning about yours.</p>
+        <p><span><a href="mailto:Akaboguchimdalu@Gmail.com" class="social-links">Akaboguchimdalu@Gmail.com</a></span> <b class="sth"> | </b> <span><a href="https://github.com/31Chimdalu" class="social-links">31Chimdalu.Github.com</a></span></p>
+    </footer>
+
 </body>
 </html>
