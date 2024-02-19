@@ -1,268 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr; /* Two equal columns */
-      height: 100vh; /* Full height of the viewport */
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            height: 100vh; /* Full height of the viewport */
+            /* overflow-y: hidden; */
+        }
 
-    .left-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background-color: #ffc0cb; /* Pale pink background */
-    }
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            height: 100%;
+            background-color: #ff9aa2; /* Light coral pink background */
+        }
 
-    .logo {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 20px;
-    }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            padding-right: 350px;
+        }
 
-    .centered-text {
-      text-align: center;
-      font-size: 20px;
-      color: #fff;
-    }
+        .centered-text {
+            text-align: center;
+            font-size: 20px;
+            color: #434c5e; /* Dark slate gray text color */
+        }
 
-    .right-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background-color: #fff; /* White background */
-    }
-   
-    .form-header, .login-form {
-      font: "";
-    } 
+        .about {
+            background-color: #45aaf2; /* Dodger blue background */
+            color: #ffffff; /* White text color */
+            /* border: 2px solid #3498db; */
+            border-radius: 10%;
+            padding: 8px;
+            border: 0;
+        }
 
-    .form-header {
-      text-align: center;
-      /* margin-bottom: 20px; */
-      color: black;
-    }
+        .about:hover {
+            background-color: #3498db; /* Hover color - Azure blue */
+        }
 
-    .form-title {
-      font-size: 24px;
-      color: #fff;
-      margin-bottom: 10px;
-    }
+        .right-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #ffffff;
+            height: 100%;
+        }
 
-    .form-subtitle {
-      font-size: 16px;
-      color: #fff;
-    }
+        /* .form-header, .login-form {
+            font: "";
+        } */
 
-    .login-form {
-      width: 100%;
-      max-width: 600px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
+        .form-header {
+            text-align: center;
+            /* margin-bottom: 20px; */
+            color: black;
+        }
 
-    .form-row {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 15px;
-    }
+        .form-title {
+            font-size: 24px;
+            color: #434c5e; /* Dark slate gray text color */
+            margin: 10px 0px 10px 0px;
+        }
 
-    .form-row label {
-      margin-bottom: 5px;
-      color: black;
-    }
+        .form-subtitle {
+            font-size: 16px;
+            color: #434c5e;
+            padding-bottom: 20px; 
+        }
 
-    .form-row input,
-    .form-row select {
-      width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-    }
+        .login-form {
+            width: 100%;
+            max-width: 600px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
 
-    .login-button {
-      width: 70%;
-      padding: 10px;
-      margin-top: 10px;
-    }
-   
-    .login-button:hover {
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); 
-    }
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
 
-    .footer {
-      margin-top: 5rem;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      color: #fff;
-      margin-bottom: 5rem;
-    }
+        .form-row label {
+            margin-bottom: 5px;
+            color: #434c5e; /* Dark slate gray text color */
+        }
 
-    .social-links {
-      display: flex;
-      margin-top: 10px;
-    }
+        .form-row input,
+        .form-row select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
 
-    .social-links a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-    }
+        .login-button {
+            width: 70%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #0e8ca0c3; /* Semi-transparent azure blue */
+            color: #ffffff; /* White text color */
+            border-radius: 5px;
+        }
 
-    .social-links a:hover {
-      text-decoration: underline;
-    }
+        .login-button:hover {
+            box-shadow: 0 0 15px rgba(14, 140, 160, 0.5); /* Slightly transparent shadow with azure blue color */
+        }
 
-    .disclaimer {
-      text-align: center;
-      color: black;
-      margin-top: 10px;
-      font-size: 14px;
-    }
+        .footer {
+            margin-top: 8rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            color: #434c5e; /* Dark slate gray text color */
+            margin-bottom: 2rem;
+        }
 
-    .sign-in-link {
-      text-align: center;
-      color: #fff;
-      margin-top: 10px;
-      font-size: 14px;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+        .social-links a {
+            /* color: #434c5e; */
+            margin: 0 10px;
+            /* text-decoration: none; */
+        }
 
-    .sign-in-link:hover {
-      text-decoration: none;
-    }
-    .about{
-      background-color: aquamarine;
-      color: antiquewhite;
-      border: 2px solid white;
-      border-radius: 10%;
-      padding: 10px;
-    }
-    .about:hover{
-      background-color: aqua;
-      color: #f4f4f4;
-      border: aqua;
-    }
-    @media screen and (max-width: 700px) {
-      body {
-        grid-template-columns: 1fr;
-      }
+        .social-links a:hover {
+            /* text-decoration: underline; */
+            color: aliceblue;
+        }
 
-      .right-side {
-        order: 1;
-        margin-top: 20px;
-      }
+        .disclaimer {
+            text-align: center;
+            color: #434c5e; /* Dark slate gray text color */
+            margin-top: 10px;
+            font-size: 14px;
+        }
 
-      .login-form {
-        width: 100%;
-      }
+        .sign-up {
+            text-align: center;
+            color: #434c5e; /* Dark slate gray text color */
+            margin-top: 10px;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
 
-      .login-button {
-        width: 100%;
-      }
-    }
-  </style>
-  <title>Login Page</title>
+        .sign-up:hover {
+            text-decoration: none;
+        }
+
+        img.svg{
+            height: 20px;
+            width: 20px;
+        }
+
+        img.svg:hover{
+            color: #45aaf2;
+        }
+
+        @media screen and (max-width: 700px) {
+            body {
+                grid-template-columns: 1fr;
+            }
+
+            /* .left-side {
+                visibility: hidden;
+            } */
+
+            .login-form {
+                width: 100%;
+            }
+
+            .login-button {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <title>Login Page | AltSchool Assignment 1 | First semester</title>
 </head>
 <body>
-  <div class="left-side">
-    <img src="https://learn.altschoolafrica.com/wp-content/uploads/2022/01/cropped-AltSchool-Logo-1.png" alt="Logo" class="logo">
-    <div class="centered-text">
-      <h1><p>Learn highly sought after skills without hassle.</p></h1>
-      <h5><sub>Earn a Diploma in highly-sought after skills.</sub></h5>
-      <button type="button" class="about" ><a href="about.html" style="text-decoration: none; font-size: larger; font-weight: 500;">Learn more - About </a></button>
+    <div class="left-side">
+        <img src="https://learn.altschoolafrica.com/wp-content/uploads/2022/01/cropped-AltSchool-Logo-1.png" alt="Logo" class="logo">
+        <div class="centered-text">
+            <h1><p>Learn highly sought after skills without hassle.</p></h1>
+            <h5><sub>Earn a Diploma in highly-sought after skills.</sub></h5>
+            <button type="button" class="about"><a href="about.html" style="text-decoration: none; font-size: large; font-weight: 400; color: rgba(135, 144, 168, 0.197);">Learn more<!-- <br><sub> About me </sub>--></a></button>
+        </div>
+
+        <div class="footer">
+            <div class="social-links">
+                <a href="#" target="_blank" name="Facebook"><img src="facebook.svg" alt="Facebook" class="svg"></a>
+                <a href="#" target="_blank" name="Twitter"><img src="twitter.svg" alt="Twitter" class="svg"></a>
+                <a href="#" target="_blank" name="Instagram"><img src="instagram.svg" alt="Instagram" class="svg"></a>
+            </div><br>
+            <sub>AltSchool Africa. All rights reserved</sub>
+        </div>
     </div>
-  </div>
 
-  <div class="right-side">
-    <!-- <div class="form-header">
-        <div class="form-title">Application Form</div>
-        <div class="form-subtitle">Fill in your details</div>
-    </div> -->
-    <h1>Application form</h1>
-    <p style="margin: 0;padding-bottom:20px;">Fill in ur details </p>
-    <form class="login-form">
-      <div class="form-row">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" name="firstName" required>
-      </div>
+    <div class="right-side">
+        <div class="form-header">
+            <div class="form-title">Application Form</div>
+            <div class="form-subtitle">Fill in your details</div>
+        </div>
+        <!-- <h1>Application form</h1>
+        <p style="margin: 0;padding-bottom:20px;">Fill in ur details </p> -->
+        <form class="login-form">
+            <div class="form-row">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
 
-      <div class="form-row">
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" name="lastName" required>
-      </div>
+            <div class="form-row">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
 
-      <div class="form-row">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
+            <div class="form-row">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-      <div class="form-row">
-        <label for="dob">Date of birth:</label>
-        <input type="date" id="dob" name="dob" required>
-      </div>
+            <div class="form-row">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="dob">Date of birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
 
-      <div class="form-row">
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="text" id="confirmPassword" name="confirmPassword" required>
-      </div>
+            <div class="form-row">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
 
-      <div class="form-row">
-        <label for="country">Country:</label>
-        <select id="country" name="country" required>
-          <option value="usa">USA</option>
-          <option value="canada">Canada</option>
-          <option value="uk">UK</option>
-          <option value="uk">NIgeria</option>
-          <option value="uk">Ukraine</option>
-          <option value="uk">Russia</option>
-          <option value="uk">Japan</option>
-          <option value="uk">South Africa</option>
-        </select>
-      </div>
+            <div class="form-row">
+                <label for="Password">Password:</label>
+                <input type="text" id="Password" name="Password" required>
+            </div>
+            
+            <div class="form-row">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="text" id="confirmPassword" name="confirmPassword" required>
+            </div>
 
-      <div class="form-row">
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
+            <div class="form-row">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">UK</option>
+                    <option value="uk">NIgeria</option>
+                    <option value="uk">Ukraine</option>
+                    <option value="uk">Russia</option>
+                    <option value="uk">Japan</option>
+                    <option value="uk">South Africa</option>
+                </select>
+            </div>
 
-      <div class="form-row">
-        <label for="education">Educational Levl:</label>
-        <input type="text" id="education" name="education" required>
-      </div>
+            <div class="form-row">
+                <label for="education">Educational Level:</label>
+                <!-- <input type="text" id="education" name="education" required> -->
+                <select id="country" name="country" required>
+                    <option value="" disabled>Select...</option>
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">UK</option>
+                    <option value="uk">NIgeria</option>
+                </select>
+            </div>
 
-    </form>
-    <br>
-    <span class="disclaimer">
-      By clicking continue, I agree to <a href="#" style="color: #0e8ca0c3;">Terms of Use</a> and acknowledge that I have read the <a href="#" style="color: #0e8ca0c3;">Privacy Policy</a>.
-    </span><br>
+        </form>
+        <br>
+        <span class="disclaimer">
+            By clicking continue, I agree to <a href="#" style="color: #0e8ca0c3;">Terms of Use</a> and acknowledge that I have read the <a href="#" style="color: #0e8ca0c3;">Privacy Policy</a>.
+        </span><br>
 
-    <button type="submit" class="login-button" style="background-color: #0e8ca0c3; color: #fff; border: 0;">Register</button>
-    
-    <br><br>
-    
-    <span class="sign-up"> Already have an account? <a href="#" style="color: #0e8ca0c3;">Log in</a></span>
+        <button type="submit" class="login-button" style="background-color: #0e8ca0c3; color: #fff; border: 0;">Register</button>
 
-    <!-- Footer Section -->
-    <div class="footer">
-      <div class="social-links">
-        <a href="#" target="_blank">Facebook</a>
-        <a href="#" target="_blank">Twitter</a>
-        <a href="#" target="_blank">Instagram</a>
-      </div><br>
-      <sub>AltSchool Africa. All rights reserved</sub>
+        <br><br>
+
+        <span class="sign-up"> Already have an account? <a href="#" style="color: #0e8ca0c3;">Log in</a></span>
+
+        <!-- Footer Section -->
+        <!-- <div class="footer">
+            <div class="social-links">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Instagram</a>
+            </div><br>
+            <sub>AltSchool Africa. All rights reserved</sub>
+        </div> -->
     </div>
-  </div>
 </body>
 </html>
